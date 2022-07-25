@@ -19,6 +19,9 @@ const SoundCloud = require('./soundcloud')
 const touchBarMenu = require('./touch-bar-menu')
 const windowOpenPolicy = require('./window-open-policy')
 const windowState = require('electron-window-state')
+const discord = require('./discord')
+const { fetch } = require('cross-fetch')
+const {ElectronBlocker, fullLists, Request} = require('@cliqz/adblocker-electron')
 
 let mainWindow = null
 let aboutWindow = null
@@ -75,7 +78,7 @@ app.on('activate', () => {
   }
 })
 
-app.on('ready', () => {
+app.on('ready', async () => {
   const menu = mainMenu({ developerTools })
   Menu.setApplicationMenu(menu)
 
@@ -101,11 +104,18 @@ app.on('ready', () => {
   contextMenu(mainWindow, soundcloud)
   errorHandlers(mainWindow)
   darkMode(mainWindow)
+  discord(mainWindow, soundcloud)
   if (process.platform == 'darwin') {
     dockMenu(soundcloud)
     touchBarMenu(mainWindow, soundcloud)
   }
 
+  const blocker = await ElectronBlocker.fromLists(fetch,fullLists);
+    
+  blocker.enableBlockingInSession(mainWindow.webContents.session)
+  blocker.on('request-blocked', (request) => {
+    console.log('blocked 1', request.tabId, request.url);
+  });
   mainWindowState.manage(mainWindow)
 
   mainWindow.on('close', (event) => {

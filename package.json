@@ -77,5 +77,10 @@
     "through2": "^3.0.1",
     "tmp": "^0.1.0",
     "vinyl": "^2.2.0"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.23.8",
+    "cross-fetch": "^3.1.5",
+    "discord-rich-presence": "^0.0.8"
   }
 }
