@@ -16,7 +16,7 @@ will get the following extras when using SoundCleod:
 - Stop playback when your computer goes to sleep
 - Close or hide all windows without interrupting playback
 - Discord Rich Presence
-- Build in ads-blocker
+- Built in ads-blocker
 
 SoundCleod is a weird name. [How to pronounce it?](https://soundcloud.com/senart/soundcleod)
 
@@ -45,13 +45,11 @@ Current version is 2.0.0 (May 19, 2020) [see changes](https://github.com/salomva
 
 **Important!** Windows 7 or newer is required (only 64 bit, 32 bit Windows is not supported).
 
-
 ## Screenshots? Yeah!
 
 ![SoundCleod screenshot](https://raw.github.com/salomvary/soundcleod/master/screenshot.jpg)
 
 ![SoundCleod dark mode screenshot](https://raw.github.com/salomvary/soundcleod/master/screenshot-dark.jpg)
-
 
 ## Forks Using SoundCleod "Engine"
 
