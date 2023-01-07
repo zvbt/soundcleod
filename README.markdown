@@ -15,6 +15,8 @@ will get the following extras when using SoundCleod:
 - Control playback from the macOS application menu
 - Stop playback when your computer goes to sleep
 - Close or hide all windows without interrupting playback
+- Discord Rich Presence
+- Build in ads-blocker
 
 SoundCleod is a weird name. [How to pronounce it?](https://soundcloud.com/senart/soundcleod)
 
@@ -25,7 +27,7 @@ Current version is 2.0.0 (May 19, 2020) [see changes](https://github.com/salomva
 ### For macOS
 
 - [Download macOS installer from
-  here](https://updates.soundcleod.com/download/mac)
+  here](https://github.com/zvbt/soundcleod/releases/latest)
 - Locate the installer (.dmg) file in Finder
 - Double click on the installer file
 - Drag SoundCleod into your Applications folder
@@ -37,20 +39,12 @@ Current version is 2.0.0 (May 19, 2020) [see changes](https://github.com/salomva
 ### For Windows
 
 - [Download Windows installer from
-  here](https://updates.soundcleod.com/download/windows)
+  here](https://github.com/zvbt/soundcleod/releases/latest)
 - Save the file when prompted
 - Run the downloaded installer
 
 **Important!** Windows 7 or newer is required (only 64 bit, 32 bit Windows is not supported).
 
-### Using [Homebrew Cask](https://formulae.brew.sh/cask/)?
-
-```sh
-brew install soundcleod
-```
-
-Note: the homebrew method is supported by the [Caskroom team](https://github.com/caskroom/homebrew-cask),
-please [report installation issues](https://github.com/caskroom/homebrew-cask#reporting-bugs) there.
 
 ## Screenshots? Yeah!
 
@@ -58,18 +52,6 @@ please [report installation issues](https://github.com/caskroom/homebrew-cask#re
 
 ![SoundCleod dark mode screenshot](https://raw.github.com/salomvary/soundcleod/master/screenshot-dark.jpg)
 
-## Alternatives
-
-To play SoundCloud:
-
-- Any modern web browser
-- [SoundCloud Desktop Player](https://help.soundcloud.com/hc/en-us/articles/1260803560930-Desktop-Player)
-  (official Chromium app)
-- [BeardedSpice](https://github.com/beardedspice/beardedspice) (Mac)
-- [Soundnode App](http://www.soundnodeapp.com/) (Mac, Win, Linux)
-- [Cumulus](https://github.com/gillesdemey/Cumulus) (Mac)
-- [Vox](http://coppertino.com/) (Mac)
-- [DaftCloud](https://daft.cloud/) (Mac)
 
 ## Forks Using SoundCleod "Engine"
 
