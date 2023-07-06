@@ -60,28 +60,29 @@
     }
   },
   "devDependencies": {
-    "electron": "^22.0.0",
-    "electron-builder": "^22.10.3",
-    "electron-builder-squirrel-windows": "^24.0.0-alpha.8",
+    "electron": "^25.2.0",
+    "electron-builder": "^24.4.0",
+    "electron-builder-squirrel-windows": "^24.5.2",
     "electron-notarize": "^0.3.0",
-    "eslint": "^8.31.0",
+    "eslint": "^8.44.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-import": "^2.26.0",
-    "gulp": "^3.9.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "gulp": "^4.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-to-ico": "^1.0.0",
     "mocha": "^10.2.0",
-    "prettier": "^2.8.1",
-    "spectron": "^10.0.1",
+    "prettier": "^3.0.0",
+    "spectron": "^19.0.0",
     "svg2png": "^4.1.1",
     "through2": "^4.0.2",
     "tmp": "^0.2.1",
     "vinyl": "^3.0.0"
   },
   "dependencies": {
-    "@cliqz/adblocker-electron": "^1.25.1",
-    "cross-fetch": "^3.1.5",
-    "discord-rich-presence": "^0.0.8"
+    "@cliqz/adblocker-electron": "^1.26.6",
+    "cross-fetch": "^4.0.0",
+    "discord-rich-presence": "^0.0.8",
+    "infinite-loop": "^0.2.2"
   }
 }

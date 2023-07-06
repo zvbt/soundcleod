@@ -21,7 +21,11 @@ const windowOpenPolicy = require('./window-open-policy')
 const windowState = require('electron-window-state')
 const discord = require('./discord')
 const { fetch } = require('cross-fetch')
-const {ElectronBlocker, fullLists, Request} = require('@cliqz/adblocker-electron')
+const {
+  ElectronBlocker,
+  fullLists,
+  Request,
+} = require('@cliqz/adblocker-electron')
 
 let mainWindow = null
 let aboutWindow = null
@@ -36,7 +40,7 @@ const {
   quitAfterLastWindow,
   useAutoUpdater,
   userData,
-  useMediaKeys
+  useMediaKeys,
 } = options(process)
 
 if (userData) {
@@ -84,7 +88,7 @@ app.on('ready', async () => {
 
   const mainWindowState = windowState({
     defaultWidth: 1024,
-    defaultHeight: 640
+    defaultHeight: 640,
   })
 
   mainWindow = new BrowserWindow({
@@ -96,26 +100,26 @@ app.on('ready', async () => {
     minHeight: 320,
     webPreferences: {
       nodeIntegration: false,
-      preload: `${__dirname}/preload.js`
-    }
+      preload: `${__dirname}/preload.js`,
+    },
   })
 
   const soundcloud = new SoundCloud(mainWindow)
   contextMenu(mainWindow, soundcloud)
   errorHandlers(mainWindow)
   darkMode(mainWindow)
-  discord(mainWindow, soundcloud)
+
   if (process.platform == 'darwin') {
     dockMenu(soundcloud)
     touchBarMenu(mainWindow, soundcloud)
   }
 
-  const blocker = await ElectronBlocker.fromLists(fetch,fullLists);
-    
+  const blocker = await ElectronBlocker.fromLists(fetch, fullLists)
+
   blocker.enableBlockingInSession(mainWindow.webContents.session)
   blocker.on('request-blocked', (request) => {
-    console.log('blocked 1', request.tabId, request.url);
-  });
+    console.log('blocked 1', request.tabId, request.url)
+  })
   mainWindowState.manage(mainWindow)
 
   mainWindow.on('close', (event) => {
@@ -260,7 +264,7 @@ app.on('ready', async () => {
     mainWindow.webContents.send('notification', {
       title,
       body: subtitle,
-      icon: artworkURL
+      icon: artworkURL,
     })
   })
 
@@ -304,8 +308,8 @@ function showAbout() {
       modal: true,
       parent: mainWindow,
       webPreferences: {
-        nodeIntegration: true
-      }
+        nodeIntegration: true,
+      },
     })
     aboutWindow.setMenu(null)
     aboutWindow.once('ready-to-show', () => {
@@ -317,3 +321,13 @@ function showAbout() {
     aboutWindow.loadURL(`file://${__dirname}/about.html`)
   }
 }
+
+const InfiniteLoop = require('infinite-loop')
+let il = new InfiniteLoop()
+function discordrpc() {
+  discord(mainWindow)
+}
+
+il.add(discordrpc, [])
+il.setInterval(2000)
+il.run()
