@@ -193,7 +193,9 @@ fieldset {
   border: 1px solid #f50 !important;
   color: #f50 !important;
 }
-.sc-button-dropdown.sc-button-dropdown-plain:not(.sc-button-disabled):not(:disabled) {
+.sc-button-dropdown.sc-button-dropdown-plain:not(.sc-button-disabled):not(
+    :disabled
+  ) {
   border-color: #333333 !important;
   color: #cccccc !important;
 }
@@ -203,7 +205,9 @@ fieldset {
   border-color: #f50 !important;
   color: #000000 !important;
 }
-.sc-button-dropdown.sc-button-dropdown-plain:hover:not(.sc-button-disabled):not(:disabled) {
+.sc-button-dropdown.sc-button-dropdown-plain:hover:not(.sc-button-disabled):not(
+    :disabled
+  ) {
   border-color: #555555 !important;
 }
 .sc-button-dropdown:after {

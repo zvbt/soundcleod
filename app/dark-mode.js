@@ -9,12 +9,12 @@ const readFile = promisify(fs.readFile)
 module.exports = function darkMode(mainWindow) {
   mainWindow.webContents.on('dom-ready', () => {
     Promise.all([
-      // Generated overrides for SoundCloud's "app.css"
-      readFile(path.join(__dirname, 'dark-mode.app.css'), 'utf-8'),
-      // Generated overrides for SoundCloud's inline styles
-      readFile(path.join(__dirname, 'dark-mode.inline.css'), 'utf-8'),
-      // Manual overrides
-      readFile(path.join(__dirname, 'dark-mode.css'), 'utf-8')
+      // // Generated overrides for SoundCloud's "app.css"
+      // readFile(path.join(__dirname, 'dark-mode.app.css'), 'utf-8'),
+      // // Generated overrides for SoundCloud's inline styles
+      // readFile(path.join(__dirname, 'dark-mode.inline.css'), 'utf-8'),
+      // // Manual overrides
+      readFile(path.join(__dirname, 'dark-mode.css'), 'utf-8'),
     ])
       .then((cssFiles) => {
         mainWindow.webContents.insertCSS(
@@ -23,7 +23,7 @@ module.exports = function darkMode(mainWindow) {
             ${cssFiles.join('\n')}
           }
           `,
-          { cssOrigin: 'user' }
+          { cssOrigin: 'user' },
         )
       })
       .catch(console.error)
