@@ -1,6 +1,6 @@
 {
   "name": "soundcleod",
-  "private": true,
+  "main": "/app/main.js",
   "scripts": {
     "predist": "npm run generate-images",
     "dist": "electron-builder",
@@ -17,7 +17,10 @@
     "prettier": "prettier --check '**/*.{js,html,css,markdown,md,yml,yaml,json}'",
     "prettier:fix": "prettier --write '**/*.{js,html,css,markdown,md,yml,yaml,json}'",
     "verify": "npm run eslint && npm run prettier && npm test",
-    "update": "ncu --upgrade"
+    "update": "ncu --upgrade",
+    "build": "electron-packager ./app Soundcleod --overwrite --win64 --icon=./build/icon.iconset/icon_512x512@2x.png --out=dist --asar",
+    "darwin": "electron-packager ./app Soundcleod --overwrite --platform=darwin --arch=x64 --icon=./build/icon.iconset/logo.icns --out=dist --prune=false --asar",
+    "linux": "electron-packager ./app Soundcleod --overwrite --platform=linux --arch=x64 --icon=./build/icon.iconset/icon_512x512@2x.png --out=dist --prune=false --asar"
   },
   "build": {
     "appId": "com.electron.soundcleod",
@@ -61,6 +64,7 @@
   },
   "devDependencies": {
     "electron": "^25.2.0",
+    "electron-packager": "^17.1.1",
     "electron-builder": "^24.4.0",
     "electron-builder-squirrel-windows": "^24.5.2",
     "electron-notarize": "^0.3.0",

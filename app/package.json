@@ -7,13 +7,16 @@
     "name": "Márton Salomváry",
     "email": "salomvary@gmail.com"
   },
-  "private": true,
   "version": "2.0.1-pre.0",
   "main": "./main.js",
   "dependencies": {
     "electron-context-menu": "^0.15.2",
     "electron-squirrel-startup": "^1.0.0",
     "electron-window-state": "^5.0.3",
-    "optimist": "^0.6.1"
+    "optimist": "^0.6.1",
+    "@cliqz/adblocker-electron": "^1.26.6",
+    "cross-fetch": "^4.0.0",
+    "discord-rich-presence": "^0.0.8",
+    "infinite-loop": "^0.2.2"
   }
 }
